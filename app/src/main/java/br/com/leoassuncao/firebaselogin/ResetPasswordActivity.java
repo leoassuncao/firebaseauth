@@ -51,7 +51,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
             String email = inputEmail.getText().toString().trim();
 
             if (TextUtils.isEmpty(email)) {
-                Toast.makeText(getApplicationContext(), "Enter your registered email", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.enter_register_email, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -60,9 +60,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(ResetPasswordActivity.this, "We have sent you instructions to reset your password", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ResetPasswordActivity.this, R.string.sent_email_password_reset, Toast.LENGTH_LONG).show();
                     }else {
-                        Toast.makeText(ResetPasswordActivity.this, "Failed to send email", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ResetPasswordActivity.this, R.string.failed_send_email, Toast.LENGTH_LONG).show();
                     }
 
                     progressBar.setVisibility(View.GONE);

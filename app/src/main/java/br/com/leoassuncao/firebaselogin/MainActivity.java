@@ -106,11 +106,11 @@ public class MainActivity extends AppCompatActivity{
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this, "Email address is updated. Please sign in with new email", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, R.string.email_updated, Toast.LENGTH_LONG).show();
                                 signOut();
                                 progressBar.setVisibility(View.GONE);
                             }else {
-                                Toast.makeText(MainActivity.this, "Failed to update email", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, R.string.failed_update_email, Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                             }
                         }
@@ -142,25 +142,25 @@ public class MainActivity extends AppCompatActivity{
                 progressBar.setVisibility(View.VISIBLE);
                 if(user != null && !newPassword.getText().toString().trim().equals("")) {
                     if (newPassword.getText().toString().trim().length() < 6) {
-                        newPassword.setError("Password too short, enter minimum 6 characters");
+                        newPassword.setError(getString(R.string.short_password));
                         progressBar.setVisibility(View.GONE);
                     } else {
                         user.updatePassword(newPassword.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(MainActivity.this, "Password is updated, sign in with new password", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainActivity.this, R.string.password_updated, Toast.LENGTH_LONG).show();
                                     signOut();
                                     progressBar.setVisibility(View.GONE);
                                 } else {
-                                    Toast.makeText(MainActivity.this, "Failed to updated password", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainActivity.this, R.string.failed_password_update, Toast.LENGTH_LONG).show();
                                     progressBar.setVisibility(View.GONE);
                                 }
                             }
                         });
                     }
                 }else if (newPassword.getText().toString().trim().equals("")) {
-                    newPassword.setError("Enter password");
+                    newPassword.setError(getString(R.string.enter_password));
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -189,16 +189,16 @@ public class MainActivity extends AppCompatActivity{
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                          if (task.isSuccessful()) {
-                             Toast.makeText(MainActivity.this, "Reset password email is sent", Toast.LENGTH_LONG).show();
+                             Toast.makeText(MainActivity.this, R.string.reset_email_sent, Toast.LENGTH_LONG).show();
                              progressBar.setVisibility(View.GONE);
                          } else {
-                             Toast.makeText(MainActivity.this, "Failed to send email", Toast.LENGTH_LONG).show();
+                             Toast.makeText(MainActivity.this, R.string.failed_send_email, Toast.LENGTH_LONG).show();
                              progressBar.setVisibility(View.GONE);
                          }
                         }
                     });
                 } else {
-                    oldEmail.setError("Enter email");
+                    oldEmail.setError(getString(R.string.enter_email));
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -213,12 +213,12 @@ public class MainActivity extends AppCompatActivity{
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this, "Your profile was deleted", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, R.string.profile_deleted, Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(MainActivity.this, SignupActivity.class));
                                 finish();
                                 progressBar.setVisibility(View.GONE);
                             } else {
-                                Toast.makeText(MainActivity.this, "Failed to delete your account", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, R.string.failed_delete_account, Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                             }
                         }
