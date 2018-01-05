@@ -20,25 +20,34 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
-            android:label="Main Activity"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name=".SettingsActivity"
+            android:label="Settings Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
 
         <activity
-        android:name=".SignupActivity"
-        android:label="Signup Activity"
-        android:theme="@style/AppTheme"
-        android:screenOrientation="portrait">
-    </activity>
+            android:name=".SignupActivity"
+            android:label="Signup Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
 
         <activity
             android:name=".ResetPasswordActivity"
             android:label="Reset Password Activity"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="Main Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
+
+        <activity
+            android:name=".ImagesActivity"
+            android:label="Image Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

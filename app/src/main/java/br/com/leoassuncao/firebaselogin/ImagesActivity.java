@@ -8,26 +8,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 /**
- * Created by leonardo.filho on 05/01/2018.
+ * Created by leonardo.filho on 04/01/2018.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class ImagesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_images);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(getString(R.string.activity_main));
+        toolbar.setTitle(getString(R.string.activity_images));
         setSupportActionBar(toolbar);
 
     }
-
-    @Override
-    public void onBackPressed() {
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,14 +34,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_main:
+                startActivity(new Intent(ImagesActivity.this, MainActivity.class));
                 return true;
 
-            case  R.id.nav_settings:
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            case R.id.nav_settings:
+                startActivity(new Intent(ImagesActivity.this, SettingsActivity.class));
                 return true;
 
             case R.id.nav_images:
-                startActivity(new Intent(MainActivity.this, ImagesActivity.class));
                 return true;
 
             default:
@@ -54,3 +49,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+

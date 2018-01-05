@@ -42,4 +42,20 @@
     <string name="profile_deleted">Your profile was deleted</string>
     <string name="failed_delete_account">Failed to delete your account</string>
 
+
+    <!-- MENU -->
+
+    <string name="nav_images">Images</string>
+    <string name="nav_main">Main</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- ACTIVITIES -->
+
+    <string name="activity_main">Main Activity</string>
+    <string name="activity_images">Images Activity</string>
+    <string name="activity_login">Login Activity</string>
+    <string name="activity_resetpassword">Reset Password Activity</string>
+    <string name="activity_settings">Settings Activity</string>
+    <string name="activity_signup">Sign up Activity</string>
+
 </resources>

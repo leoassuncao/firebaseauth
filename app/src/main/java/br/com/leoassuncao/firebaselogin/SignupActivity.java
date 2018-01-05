@@ -16,8 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by leonardo.filho on 03/01/2018.
  */
@@ -89,7 +87,7 @@ public class SignupActivity extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Toast.makeText(SignupActivity.this, "Authentication Failed" + task.getException(), Toast.LENGTH_SHORT).show();
                         } else {
-                            startActivity(new Intent(SignupActivity.this, MainActivity.class));
+                            startActivity(new Intent(SignupActivity.this, SettingsActivity.class));
                             finish();
                         }
                     }
